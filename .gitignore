@@ -11,3 +11,4 @@ appsettings.json
 /wwwroot/node_modules
 
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore
+.fake
