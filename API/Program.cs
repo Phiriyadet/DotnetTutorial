@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 
 #region Configure IOption Pattern
 
-builder.Services.ConfigureInfraOptions();
+builder.Services.ConfigureInfraOptions(builder.Configuration);
 
 #endregion
 
