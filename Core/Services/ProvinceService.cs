@@ -23,6 +23,12 @@ public class ProvinceService : IProvinceService
             IsActive = entity.IsActive
         };
     }
+    
+    public async Task<IEnumerable<ProvinceServiceResponse>> GetAllProvincesAsync()
+        {
+            var provinces = await _repository.GetAllAsync();
+            return provinces.Select(ConvertToResponseModel);
+        }
 
     public async Task<ProvinceServiceResponse> CreateNewProvinceAsync(ProvinceServiceInput input)
     {

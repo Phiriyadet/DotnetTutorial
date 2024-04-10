@@ -9,6 +9,11 @@ public class ProvinceRepository: BaseRepository<Province>, IProvinceRepository
     {
     }
 
+    public async Task<IEnumerable<Province>> GetAllAsync()
+    {
+        return await base._context.Provinces.ToListAsync();
+    }
+
     public async Task<Province> GetByIdWithPointOfInterestAsync(Guid id)
     {
         return await base._context.Provinces

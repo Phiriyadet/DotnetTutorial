@@ -60,6 +60,21 @@ public class ProvinceController : ControllerBase
         }
     }
 
+    [HttpGet("GetAllProvinces")]
+public async Task<ActionResult<IEnumerable<ProvinceServiceResponse>>> GetAllProvincesAsync()
+{
+    try
+    {
+        var provinces = await _provinceService.GetAllProvincesAsync();
+        return Ok(provinces);
+    }
+    catch(Exception ex)
+    {
+        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+    }
+}
+
+
     [HttpGet("{id}")]
     public async Task<ActionResult<ProvinceServiceResponse>> GetProvinceAsync(Guid id)
     {

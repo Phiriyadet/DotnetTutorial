@@ -7,6 +7,7 @@ public interface IProvinceService
     Task<ProvinceServiceResponse> CreateNewProvinceAsync(ProvinceServiceInput input);
     Task<ProvinceServiceResponse> UpdateProvinceAsync(Guid provinceId, ProvinceServiceInput input);
     Task<ProvinceServiceResponse> DeleteProvinceAsync(Guid provinceId);
+    Task<IEnumerable<ProvinceServiceResponse>> GetAllProvincesAsync();
     Task<ProvinceServiceResponse> GetProvinceAsync(Guid provinceId);
     Task<ProvinceServiceResponseWithPointOfInterest> GetProvinceAsyncWithPointOfInterestAsync(Guid provinceId);
     Task<ProvinceServiceResponseWithPaging> GetListOfAllActiveProvincesAsync(int pageNumber, int pageSize);
